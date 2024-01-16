@@ -5,12 +5,8 @@ function MyPosts() {
     return(
 
       <div className={classes.posts}>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <Post message="Hi, hov are you?"/>
+      <Post message="Old or young?" />
       </div>
     
     );
