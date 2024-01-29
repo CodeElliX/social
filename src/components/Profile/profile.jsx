@@ -1,10 +1,13 @@
-import MyPosts from '../MyPosts/MyPosts';
+import MyPosts from '../../Post/MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import classes from './profile.module.css';
+
+
 
 function Profile() {
     return(
       <div>
-      <div><img src='https://www.desertfun.ae/images/gallery/IMG%20World%20Park%20By%20Desertfun.ae%203.jpg'/></div>
+      <ProfileInfo />
       <MyPosts />
       </div>
     );
