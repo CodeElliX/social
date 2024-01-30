@@ -24,7 +24,7 @@ let messageData = [
 
 function Dialoges(props) {
     return(
-    <div clasName={style.ollDialogs}>
+    <div className={style.ollDialogs}>
             <div className={style.dialogs}>
                  {dialogesComponentData}
             </div>
