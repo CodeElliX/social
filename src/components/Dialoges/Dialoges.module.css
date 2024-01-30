@@ -2,4 +2,12 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
     padding: 10px;
+    border: 2px solid;
+}
+.dialogs{
+    color: aliceblue;
+    background-color: rgb(17, 176, 57);
+}
+.messages{
+    background-color: rgb(85, 85, 224);
 }

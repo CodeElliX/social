@@ -5,7 +5,9 @@ import Navbar from './components/Navbar/navbar';
 import Profile from './components/Profile/profile'
 import Dialoges from './components/Dialoges/Dialoges';
 import{BrowserRouter, Routes, Route} from 'react-router-dom';
-function App() {
+
+
+function App(props) {
   return (
      <BrowserRouter>
     <div className='app-wrapper'> 
