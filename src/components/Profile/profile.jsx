@@ -4,11 +4,11 @@ import classes from './profile.module.css';
 
 
 
-function Profile() {
+function Profile(props) {
     return(
       <div>
       <ProfileInfo />
-      <MyPosts />
+      <MyPosts myPostsData={props.myPostsData}/>
       </div>
     );
 }

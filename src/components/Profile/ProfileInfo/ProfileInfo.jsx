@@ -1,6 +1,6 @@
 import classes from './ProfileInfo.module.css';
 
-function ProfileInfo() {
+function ProfileInfo(props) {
     return(
 <div>
 <div>
