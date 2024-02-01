@@ -3,9 +3,10 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
 
-function Dialoges(props) {
-let dialogesComponentData = props.dialogesData.map(el => <DialogItem id={el.id} name={el.name} />) 
-  let messagesComponentData = props.messageData.map(el => <Message id={el.id} message={el.message} />) 
+
+function  Dialoges(props) {
+let dialogesComponentData = props.state.dialogesData.map(el => <DialogItem id={el.id} name={el.name} />) 
+  let messagesComponentData = props.state.messageData.map(el => <Message id={el.id} message={el.message} />) 
     return(
     <div className={style.ollDialogs}>
             <div className={style.dialogs}>

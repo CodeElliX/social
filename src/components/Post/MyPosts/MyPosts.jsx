@@ -1,9 +1,9 @@
 import classes from './MyPosts.module.css';
-import Post from '../Post';
+import Post from './../Post';
 
 
 function MyPosts(props) {
-  let postMap = props.myPostsData.map((el) => {
+  let postMap = props.state.map((el) => {
     return <Post message={el.message} like={el.like}/>
   })
     return(
