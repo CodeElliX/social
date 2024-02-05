@@ -7,7 +7,7 @@ function MyPosts(props) {
   let  link = React.createRef();
   let addPost = () => {
     let text = link.current.value;
-    alert(text);
+    props.postPush(text);
   };
 
   let postMap = props.state.map((el) => {

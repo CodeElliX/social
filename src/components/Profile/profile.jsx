@@ -9,7 +9,7 @@ function Profile(props) {
     return(
       <div>
       <ProfileInfo />
-      <MyPosts state={props.state.postsData}/>
+      <MyPosts state={props.state.postsData} postPush={props.postPush}/>
       </div>
     );
 }

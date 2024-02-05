@@ -33,4 +33,13 @@ let state = {
     }
 }
 
+export function postPush (messageValue) {
+let newObj = {
+    id: 3,
+    message: messageValue,
+    like: "0"
+}
+state.myPostData.postsData.push(newObj);
+}
+
 export default state;
