@@ -8,7 +8,7 @@ function MyPosts(props) {
   let addPost = () => {
     let text = link.current.value;
     props.postPush(text);
-  };
+  }
 
   let postMap = props.state.map((el) => {
     return <Post message={el.message} like={el.like}/>

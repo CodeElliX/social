@@ -1,3 +1,7 @@
+import { renderFunk } from "../render";
+
+
+
 let state = {
        myPostData: 
     {
@@ -40,6 +44,7 @@ let newObj = {
     like: "0"
 }
 state.myPostData.postsData.push(newObj);
+renderFunk(state);
 }
 
 export default state;

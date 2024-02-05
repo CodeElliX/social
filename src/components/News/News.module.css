@@ -1,0 +1,29 @@
+.contImg{
+    border: 1px solid red;
+    width: 250px;
+    height: 150px;
+    float: inline-end;
+    transition: all 1000ms ease-in-out;
+}
+.contImg:hover{
+    border: none;
+}
+.img{
+    width: 200px;
+    height: 100px;
+    display: flex;
+    margin: auto;
+    padding: 20px; 
+    transition: all 200ms ease-in-out;
+    
+}
+.img:hover{
+    transform: scale(1.2);
+    
+}
+.j h1{
+    text-align: center;
+}
+.j p{
+    padding: 50px;
+}
