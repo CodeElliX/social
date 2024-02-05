@@ -4,6 +4,7 @@ import Header from './components/Header/header';
 import Navbar from './components/Navbar/navbar';
 import Profile from './components/Profile/profile'
 import Dialoges from './components/Dialoges/Dialoges';
+import News from './components/News/News';
 import{BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -18,6 +19,7 @@ function App(props) {
       <Routes>
       <Route path='/dialogs/*' element={<Dialoges state={props.state.myMessageData} />} />
       <Route path='/profile/*' element={<Profile state={props.state.myPostData} />} />
+      <Route path='/news/*' element={<News />} />
        
        </Routes>
      </div>
