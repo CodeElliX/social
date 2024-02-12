@@ -1,5 +1,11 @@
-import { renderFunk } from "../render";
 
+function newRerenderHelper() {
+
+}
+
+export function newRerender(observer) {
+ newRerenderHelper = observer;
+}
 
 
 let state = {
@@ -53,14 +59,13 @@ let newObj = {
 }
 state.myPostData.postsData.push(newObj);
 state.myPostData.textareData = '';
-renderFunk(state);
+newRerenderHelper(state)
 }
-//////////////
 
 
 export function addChangeState(textValue) {
   state.myPostData.textareData = textValue;
-  renderFunk(state);
+  newRerenderHelper(state)
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -71,7 +76,7 @@ export function addProfileInfoItemText(textValue) {
     description: textValue
    }
    state.profileInfoData.push(profileObj);
-   renderFunk(state);
+   newRerenderHelper(state)
 }
 
 
