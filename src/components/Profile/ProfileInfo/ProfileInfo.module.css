@@ -1,4 +1,9 @@
 .descriptionBlock{
     padding: 10px;
     color: aqua;
+    margin: 20px;
+}
+.image img{
+    width: 30px;
+    height: 30px;
 }

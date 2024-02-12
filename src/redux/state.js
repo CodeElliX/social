@@ -9,13 +9,13 @@ let state = {
         [
         {id: 1, message:"Hi, hov are you?", like: "0" },
         {id: 2, message:"Old or young?", like: "23" },
-        ] 
-    
+        ],
+        textareData: "it-kam"
     },
             
         myMessageData : 
      {
-            
+        
         messageData : 
         [
             {id: 1, message: "Hi"},
@@ -34,17 +34,50 @@ let state = {
         {id: 5, name: "Ksenia"}
         ]
       
-    }
+    },
+
+    profileInfoData: 
+    [
+        {ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg", description: "Jlya"},
+        {ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg", description: "Jlya"}
+    ]
 }
 
-export function postPush (messageValue) {
+///////////////////////////////////////////////////////////////////
+
+export function postPush () {
 let newObj = {
     id: 3,
-    message: messageValue,
+    message: state.myPostData.textareData,
     like: "0"
 }
 state.myPostData.postsData.push(newObj);
+state.myPostData.textareData = '';
 renderFunk(state);
 }
+//////////////
+
+
+export function addChangeState(textValue) {
+  state.myPostData.textareData = textValue;
+  renderFunk(state);
+}
+////////////////////////////////////////////////////////////////////
+
+
+export function addProfileInfoItemText(textValue) {
+   let profileObj = {
+    ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+    description: textValue
+   }
+   state.profileInfoData.push(profileObj);
+   renderFunk(state);
+}
+
+
+
+
+
 
 export default state;
+

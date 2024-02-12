@@ -6,10 +6,11 @@ import state from '../../redux/state';
 
 
 function Profile(props) {
+  debugger;
     return(
       <div>
-      <ProfileInfo />
-      <MyPosts state={props.state.postsData} postPush={props.postPush}/>
+      <ProfileInfo profileInfoData={props.profileInfoData} addProfileInfoItemText={props.addProfileInfoItemText}/>
+      <MyPosts state={props.state.postsData} textareData={props.state.textareData} addChangeState={props.addChangeState} postPush={props.postPush}/>
       </div>
     );
 }
