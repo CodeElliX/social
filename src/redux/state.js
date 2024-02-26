@@ -1,14 +1,6 @@
 
-function newRerenderHelper() {
-
-}
-
-export function newRerender(observer) {
- newRerenderHelper = observer;
-}
-
-
-let state = {
+let store = {
+   _state: {
        myPostData: 
     {
         postsData : 
@@ -47,36 +39,43 @@ let state = {
         {ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg", description: "Jlya"},
         {ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg", description: "Jlya"}
     ]
-}
+},
+getState() {
+    return this._state;
+},
 
-///////////////////////////////////////////////////////////////////
+ _newRerenderHelper(){
 
-export function postPush () {
+},
+
+newRerender(observer) {
+ this._newRerenderHelper = observer;
+},
+
+postPush () {
 let newObj = {
     id: 3,
-    message: state.myPostData.textareData,
+    message: this._state.myPostData.textareData,
     like: "0"
 }
-state.myPostData.postsData.push(newObj);
-state.myPostData.textareData = '';
-newRerenderHelper(state)
-}
+this._state.myPostData.postsData.push(newObj);
+this._state.myPostData.textareData = '';
+this._newRerenderHelper(this._state)
+},
 
+addChangeState(textValue) {
+  this._state.myPostData.textareData = textValue;
+  this._newRerenderHelper(this._state)
+},
 
-export function addChangeState(textValue) {
-  state.myPostData.textareData = textValue;
-  newRerenderHelper(state)
-}
-////////////////////////////////////////////////////////////////////
-
-
-export function addProfileInfoItemText(textValue) {
+addProfileInfoItemText(textValue) {
    let profileObj = {
     ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
     description: textValue
    }
-   state.profileInfoData.push(profileObj);
-   newRerenderHelper(state)
+   this._state.profileInfoData.push(profileObj);
+   this._newRerenderHelper(this._state)
+}
 }
 
 
@@ -84,5 +83,8 @@ export function addProfileInfoItemText(textValue) {
 
 
 
-export default state;
+
+
+// window.store = store;
+export default store;
 

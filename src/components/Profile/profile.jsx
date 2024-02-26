@@ -6,7 +6,6 @@ import state from '../../redux/state';
 
 
 function Profile(props) {
-  debugger;
     return(
       <div>
       <ProfileInfo profileInfoData={props.profileInfoData} addProfileInfoItemText={props.addProfileInfoItemText}/>

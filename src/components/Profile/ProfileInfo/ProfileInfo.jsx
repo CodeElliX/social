@@ -12,7 +12,6 @@ function ProfileInfo(props) {
   let ProfileInfoItem = props.profileInfoData.map((el) => {
     return <OnePost ava={el.ava} description={el.description}/>
   });
-  console.log(ProfileInfoItem);
     return(
 <div>
 <div>

@@ -1,6 +1,6 @@
 import style from './News.module.css';
 
-function News() {
+function News(props) {
     return(
         <div className={style.j}>
             <h1>Ренданг</h1>
