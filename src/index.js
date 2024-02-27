@@ -12,9 +12,7 @@ export function renderFunk(state) {
 root.render(
   <React.StrictMode>
     <App state={state} 
-    postPush={store.postPush.bind(store)} 
-    addChangeState={store.addChangeState.bind(store)} 
-    addProfileInfoItemText={store.addProfileInfoItemText.bind(store)} />
+    dispatch={store.dispatch.bind(store)}  />
   </React.StrictMode>
 );
 }

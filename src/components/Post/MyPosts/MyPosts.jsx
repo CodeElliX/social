@@ -4,16 +4,15 @@ import React, { createRef } from 'react';
 
 
 function MyPosts(props) { 
-
   let  link = React.createRef();
 
   let addPost = () => {
-    props.postPush();
+    props.dispatch({type: "POST-PUSH"});
   }
 
   function addChange() {
     let text = link.current.value;
-    props.addChangeState(text);
+    props.dispatch({type: "ADD-CHANGE-STATE", textValue: text});
   }
 
   let postMap = props.state.map((el) => {

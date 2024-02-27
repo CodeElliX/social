@@ -8,8 +8,8 @@ import state from '../../redux/state';
 function Profile(props) {
     return(
       <div>
-      <ProfileInfo profileInfoData={props.profileInfoData} addProfileInfoItemText={props.addProfileInfoItemText}/>
-      <MyPosts state={props.state.postsData} textareData={props.state.textareData} addChangeState={props.addChangeState} postPush={props.postPush}/>
+      <ProfileInfo profileInfoData={props.profileInfoData} dispatch={props.dispatch}/>
+      <MyPosts state={props.state.postsData} textareData={props.state.textareData} dispatch={props.dispatch}/>
       </div>
     );
 }

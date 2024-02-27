@@ -1,5 +1,6 @@
 
 let store = {
+
    _state: {
        myPostData: 
     {
@@ -39,42 +40,66 @@ let store = {
         {ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg", description: "Jlya"},
         {ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg", description: "Jlya"}
     ]
+}, 
+
+_newRerenderHelper(){
+
 },
+
 getState() {
     return this._state;
-},
-
- _newRerenderHelper(){
-
 },
 
 newRerender(observer) {
  this._newRerenderHelper = observer;
 },
 
-postPush () {
-let newObj = {
-    id: 3,
-    message: this._state.myPostData.textareData,
-    like: "0"
-}
-this._state.myPostData.postsData.push(newObj);
-this._state.myPostData.textareData = '';
-this._newRerenderHelper(this._state)
-},
+// _postPush () {
+// let newObj = {
+//     id: 3,
+//     message: this._state.myPostData.textareData,
+//     like: "0"
+// }
+// this._state.myPostData.postsData.push(newObj);
+// this._state.myPostData.textareData = '';
+// this._newRerenderHelper(this._state)
+// },
 
-addChangeState(textValue) {
-  this._state.myPostData.textareData = textValue;
-  this._newRerenderHelper(this._state)
-},
+// _addChangeState(textValue) {
+//   this._state.myPostData.textareData = textValue;
+//   this._newRerenderHelper(this._state)
+// },
 
-addProfileInfoItemText(textValue) {
-   let profileObj = {
-    ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
-    description: textValue
-   }
-   this._state.profileInfoData.push(profileObj);
-   this._newRerenderHelper(this._state)
+// _addProfileInfoItemText(textValue) {
+//    let profileObj = {
+//     ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+//     description: textValue
+//    }
+//    this._state.profileInfoData.push(profileObj);
+//    this._newRerenderHelper(this._state)
+// },
+
+dispatch(action) {
+ if(action.type === "POST-PUSH"){
+    let newObj = {
+        id: 3,
+        message: this._state.myPostData.textareData,
+        like: "0"
+    }
+    this._state.myPostData.postsData.push(newObj);
+    this._state.myPostData.textareData = '';
+    this._newRerenderHelper(this._state)
+ } else if(action.type === "ADD-CHANGE-STATE") {
+    this._state.myPostData.textareData = action.textValue;
+    this._newRerenderHelper(this._state)
+ }else if(action.type === "ADD-PROFILE-INFO-ITEM-TEXT"){
+    let profileObj = {
+        ava: "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+        description: action.textValue
+       }
+       this._state.profileInfoData.push(profileObj);
+       this._newRerenderHelper(this._state)
+ }
 }
 }
 

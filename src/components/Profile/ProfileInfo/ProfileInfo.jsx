@@ -6,7 +6,7 @@ function ProfileInfo(props) {
   let link = React.createRef();
   function profileFunc() {
       let text = link.current.value;
-      props.addProfileInfoItemText(text);
+      props.dispatch({type: "ADD-PROFILE-INFO-ITEM-TEXT", textValue: text} );
   }
 
   let ProfileInfoItem = props.profileInfoData.map((el) => {
