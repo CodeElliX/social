@@ -8,12 +8,14 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export function renderFunk(state) {
+function renderFunk(state) {
 root.render(
+  
   <React.StrictMode>
     <App state={state} 
-    dispatch={store.dispatch.bind(store)}  />
+    dispatch={store.dispatch.bind(store)} store={store} />
   </React.StrictMode>
+  
 );
 }
 

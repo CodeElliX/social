@@ -10,21 +10,21 @@ import{BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App(props) {
   return (
-     <BrowserRouter>
+    <BrowserRouter>
     <div className='app-wrapper'> 
      <Header />
      <Navbar />
 
      <div className='app-wrapper-content'>
       <Routes>
-      <Route path='/dialogs/*' element={<Dialoges state={props.state.myMessageData} />} />
+      <Route path='/dialogs/*' element={<Dialoges state={props.state.myMessageData}  store={props.store}/>} />
       <Route path='/profile/*' element={<Profile state={props.state.myPostData} dispatch={props.dispatch} profileInfoData={props.state.profileInfoData} />} />
       <Route path='/news/*' element={<News />} />
        
        </Routes>
      </div>
     </div>
-    </BrowserRouter>
+  </BrowserRouter>
   );
 }
 

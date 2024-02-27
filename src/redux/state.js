@@ -1,4 +1,9 @@
 
+let POST_PUSH = "POST-PUSH";
+let ADD_CHANGE_STATE = "ADD-CHANGE-STATE";
+
+let UPDATE_TEXT_DIALOGES_DATA = "UPDATE_TEXT_DIALOGES_DATA";
+let SEND_MESSAGE = "SEND_MESSAGE";
 let store = {
 
    _state: {
@@ -31,7 +36,9 @@ let store = {
         {id: 3, name: "Nika"},
         {id: 4, name: "Nikita"},
         {id: 5, name: "Ksenia"}
-        ]
+        ],
+
+        textDialogesData: ""
       
     },
 
@@ -99,11 +106,27 @@ dispatch(action) {
        }
        this._state.profileInfoData.push(profileObj);
        this._newRerenderHelper(this._state)
- }
-}
+ }else if(action.type === UPDATE_TEXT_DIALOGES_DATA) {
+   this._state.myMessageData.textDialogesData = action.body;
+   this._newRerenderHelper(this._state);
+ }else if(action.type === SEND_MESSAGE) {
+    let body = this._state.myMessageData.textDialogesData;
+    this._state.myMessageData.textDialogesData = "";
+    this._state.myMessageData.messageData.push({id: 6, message: body});
+    this._newRerenderHelper(this._state);
+  }
 }
 
+}
 
+export const addPostActionCreator = () =>  ({type: POST_PUSH})
+  
+
+  export const addChangeActionCreator = (text) => ({type: ADD_CHANGE_STATE, textValue: text})
+
+  export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+  export const updateTextDialogesDataActionCreator = (body) => ({type: UPDATE_TEXT_DIALOGES_DATA, body: body})
+  
 
 
 

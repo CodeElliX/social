@@ -1,18 +1,20 @@
 import classes from './MyPosts.module.css';
 import Post from './../Post';
 import React, { createRef } from 'react';
+import {addPostActionCreator} from "./../../../redux/state"
+import {addChangeActionCreator} from "./../../../redux/state"
 
 
 function MyPosts(props) { 
   let  link = React.createRef();
 
   let addPost = () => {
-    props.dispatch({type: "POST-PUSH"});
+    props.dispatch(addPostActionCreator()); 
   }
 
   function addChange() {
     let text = link.current.value;
-    props.dispatch({type: "ADD-CHANGE-STATE", textValue: text});
+    props.dispatch(addChangeActionCreator(text));
   }
 
   let postMap = props.state.map((el) => {
